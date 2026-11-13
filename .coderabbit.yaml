@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: ko-KR
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  review_status: true
+  collapse_walkthrough: true
+  poem: false
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - "^develop$"
+  path_filters:
+    - "!**/node_modules/**"
+    - "!**/build/**"
+    - "!**/.next/**"
+  path_instructions:
+    - path: "**/*"
+      instructions: >-
+        Kubernetes·Helm 설정의 기관과 환경 경계, 최소 권한, Vault 주입, 시크릿 평문 포함 여부를 검토합니다. 배포 검증과 롤백에 필요한 설정이 있는지 확인합니다.
+chat:
+  auto_reply: true
